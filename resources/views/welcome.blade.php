@@ -4,24 +4,43 @@
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <title>Users</title>
-            <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+            <title>Main</title>
+            <link rel="stylesheet" href="css/style_dictionary.css"/>
         </head>
 
         <body>
-            <div class="mw6 center pa3 sans-serif">
-                <h1 class="mb4">Users</h1>
-
-                @foreach($users as $user)
-                <div class="pa2 mb3 striped--near-white">
-                    <header class="b mb2">{{ $user->name }}</header>
-                    <div class="pl2">
-                        <p class="mb2">id: {{ $user->id }}</p>
-                        <p class="mb2">email: {{ $user->email }}</p>
-                        <p class="mb2">details: {{ $user->remember_token }}</p>
-                    </div>
+            <div>
+                <h1>Новые комиксы</h1>
                 </div>
-                @endforeach
+                <!-- Карточка комикса -->
+                <div class="card">
+                <!-- Верхняя часть -->
+                <div class="card__top">
+                    <!-- Изображение-ссылка комикса -->
+                    <a href="#" class="card__image">
+                    <img
+                        src="./image/example_preview.jpg"
+                        alt="True Autumn"
+                    />
+                    </a>
+                    <!-- Жанр, тэг -->
+                    <div class="card__label">Мистика</div>
+                </div>
+                <!-- Нижняя часть -->
+                <div class="card__bottom">
+                    <!-- Название комикса-->
+                    <div class="card__elements">
+                        <div class="card__title">True Autumn</div>
+                    </div>
+                    <!-- Автор комикса -->
+                    <div class="card__author">Lilium Elysium</div>
+                    <!-- Описание комикса -->
+                    <a href="#" class="card__description">
+                    3 девушки ушли жить в лес. А что было дальше - совсем другая история.
+                    </a>
+                    <!-- Кнопка "Подробнее", ссылается полную страницу с комиксом -->
+                    <button class="card__add">Подробнее</button>
+                </div>
             </div>
         </body>
 </html>
