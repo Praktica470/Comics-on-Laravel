@@ -9,7 +9,7 @@ class WelcomePageController extends Controller
 {
     public function index() 
     {
-        $comics = Comics::all();
+        $comics = Comics::all()->sortByDesc('updated_at');
         
         return view('welcome')->with('comics', $comics);
     }
