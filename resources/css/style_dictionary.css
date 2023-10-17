@@ -159,3 +159,12 @@ body {
   row-gap: 40px; /* Отступ между рядами */
   margin: 0 auto;
 }
+
+.text_link {
+  text-decoration: none; /* Убирает подчеркивание для ссылок */
+  color: var(--light_lavender);
+ } 
+ .text_link:hover { 
+  text-decoration: underline; /* Добавляем подчеркивание при наведении курсора на ссылку */
+  color: var(--highlight_blue);
+ }
