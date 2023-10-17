@@ -16,10 +16,4 @@ class GenresToComics extends Model
         'comics_id',
         'genre_id'
     ];
-
-    public function getGenre() {
-
-        return Genre::where('id', $this->genre_id)->first();
-
-    }
 }

@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+
+    --darkest_blue: #364151;
+    --highlight_blue: #798593;
+    --light_lavender: #ded2cf;
+    --dull_lavender: #aca1a1;
+    --highlight_dull_lavender: #afaca8;
+
+    --somber_green: #474f42;
+    --bleak_olive: #888880;
+    --rusty_crimson: #6f2809;
+    --highlight_rusty_crimson: #a35858;
+}
+
+/* Я так и не смог разобраться с TailwindCSS*/
 .bg-darkest-blue {
     background-color: var(--darkest_blue);
 }
@@ -21,3 +36,187 @@
 .bg-rusty-crimson {
     background-color: #6f2809;
 }
+
+.text-light-lavender {
+    color: var(--light_lavender);
+}
+
+/*___________________________________________*/
+
+ul {
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0; /*убираем отступы*/
+    padding-left: 0; /*убираем отступы*/
+    margin-top:25px; /*делаем отступ сверху*/
+  }
+  .nav_a {
+    text-decoration: none; /*убираем подчеркивание текста ссылок*/
+    background: var(--rusty_crimson); /*добавляем фон к пункту меню*/
+    color: var(--light_lavender); /*меняем цвет ссылок*/
+    padding:10px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    border-radius:4px; /*добавляем скругление*/
+    -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
+  }
+  .nav_a:hover {
+    background: var(--highlight_rusty_crimson);/*добавляем эффект при наведении*/
+  }
+  li {
+    float:left; /*Размещаем список горизонтально для реализации меню*/
+    margin-right:5px; /*Добавляем отступ у пунктов меню*/
+    
+  }
+  
+  .comics_preview_container {
+      width: 10px;
+      height: 15px;
+      background: var(--dull_lavender);
+  }
+  
+  /*
+  Карточки комиксов
+  */
+  
+  .card {
+    width: 225px;
+    min-height: 350px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Размещаем элементы в колонку */
+    border-radius: 4px;
+    transition: 0.2s;
+    position: relative;
+  }
+  
+  /* При наведении на карточку - меняем цвет тени */
+  .card:hover {
+    box-shadow: 4px 8px 16px rgba(161, 133, 225, 0.2);
+  }
+  
+  .card__top {
+    flex: 0 0 220px; /* Задаем высоту 220px, запрещаем расширение и сужение по высоте */
+    position: relative;
+    overflow: hidden; /* Скрываем, что выходит за пределы */
+  }
+  
+  /* Контейнер для картинки */
+  .card__image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card__image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Встраиваем картинку в контейнер card__image */
+    transition: 0.2s;
+  }
+  
+  /* При наведении - увеличиваем картинку */
+  .card__image:hover > img {
+    transform: scale(1.1);
+  }
+  
+  /* Размещаем скидку на товар относительно изображения */
+  .card__label {
+    padding: 4px 8px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: var(--rusty_crimson);
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--light_lavender);
+  }
+  
+  .card__bottom {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto; /* Занимаем всю оставшуюся высоту карточки */
+    padding: 10px;
+  }
+  
+  .card__elements {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .card__title {
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--light_lavender);
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+  
+  .card__author {
+      display: block;
+      font-weight: 500;
+      font-size: 15px;
+      color: var(--light_lavender)
+  }
+  
+  .card__description {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 150%;
+    color: var(--dull_lavender);
+  }
+  
+  .card__description:hover {
+    color: var(--highlight_dull_lavender);
+  }
+  
+  .card__add {
+    display: block;
+    align-self: center;
+    width: 70%;
+    font-weight: 400;
+    font-size: 17px;
+    color: var(--dull_lavender);
+    background-color: var(--darkest_blue);
+    padding: 10px;
+    text-align: center;
+    border: 1px solid var(--dull_lavender);
+    border-radius: 4px;
+    cursor: pointer; /* Меняем курсор при наведении */
+    transition: 0.2s;
+    margin-top: auto; /* Прижимаем кнопку к низу карточки */
+  }
+  
+  .card__add:hover {
+    border: 1px solid var(--highlight_blue);
+    background-color: var(--highlight_blue);
+    color: var(--highlight_dull_lavender);
+  }
+  
+  .cards {
+    display: grid;
+    /* Автоматически заполняем на всю ширину grid-контейнера */
+    grid-template-columns: repeat(auto-fill, 225px);
+    width: 100%;
+    max-width: 1000px; /* Ширина grid-контейнера */
+    justify-content: center;
+    justify-items: center; /* Размещаем карточку по центру */
+    column-gap: 30px; /* Отступ между колонками */
+    row-gap: 40px; /* Отступ между рядами */
+    margin: 0 auto;
+  }
+  
+  .text_link {
+    text-decoration: none; /* Убирает подчеркивание для ссылок */
+    color: var(--light_lavender);
+   } 
+   .text_link:hover { 
+    text-decoration: underline; /* Добавляем подчеркивание при наведении курсора на ссылку */
+    color: var(--highlight_blue);
+   }
