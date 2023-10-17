@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-darkest-blue {
+    background-color: var(--darkest_blue);
+}
+
+.bg-somber-green {
+    background-color: #474f42;
+}
+
+.bg-bleak-olive {
+    background-color: #888880;
+}
+
+.bg-dull-lavender {
+    background-color: #aca1a1;
+}
+
+.bg-rusty-crimson {
+    background-color: #6f2809;
+}

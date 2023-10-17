@@ -15,6 +15,18 @@ export default {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
         },
+
+        colors: {
+            'darkest_blue' : '#364151',
+            'highlight_blue' : '#798593',
+            'light_beige' : '#ded2cf',
+            'dull_brown' : '#aca1a1',
+            'highlight_dull_brown' : '#afaca8',
+            'rusty_crimson' : '#6f2809',
+            'somber_green' : '#474f42',
+            'bleak_olive' : '#888880',
+            'highlight_rusty_crimson' : '#a35858'
+        }
     },
 
     plugins: [forms],

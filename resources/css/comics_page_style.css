@@ -1,5 +1,4 @@
 :root{
-
     --darkest_blue: #364151;
     --highlight_blue: #798593;
     --light_lavender: #ded2cf;
@@ -10,51 +9,45 @@
     --bleak_olive: #888880;
     --rusty_crimson: #6f2809;
     --highlight_rusty_crimson: #a35858;
-
-
-    /* --darkest_blue: #050F40;
-    --highlight_blue: #3A3BC5;
-    --light_lavender: #EAD8FF;
-    --dull_lavender: #786A9A;
-    --highlight_dull_lavender: #A185E1; */
 }
 
 
 h1 {
     color: var(--light_lavender);
-    background: var(--bleak_olive);
     font-family: Arial, Verdana, sans-serif;
     text-align: center;
 }
 body {
-    background: var(--darkest_blue);
+    background: var(--highlight_blue);
     color: var(--light_lavender);
 }
 
-ul {
-  list-style: none; /*убираем маркеры списка*/
-  margin: 0; /*убираем отступы*/
-  padding-left: 0; /*убираем отступы*/
-  margin-top:25px; /*делаем отступ сверху*/
+.page_comics_container {
+  width: 100%;
+  display: flex;
+  border-radius: 4px;
+  padding: 50px 25px 20px 25px;
+  position: relative;
+  background: var(--darkest_blue);
 }
-.nav_a {
-  text-decoration: none; /*убираем подчеркивание текста ссылок*/
-  background: var(--rusty_crimson); /*добавляем фон к пункту меню*/
-  color: var(--light_lavender); /*меняем цвет ссылок*/
-  padding:10px; /*добавляем отступ*/
-  font-family: arial; /*меняем шрифт*/
-  border-radius:4px; /*добавляем скругление*/
-  -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
-  -o-transition: all 0.3s 0.01s ease;
-  -webkit-transition: all 0.3s 0.01s ease;
+
+.page_comics_cover_container{
+  display: inline-block;
+  min-width: 270px;
+  max-width: 300px;
 }
-.nav_a:hover {
-  background: var(--highlight_rusty_crimson);/*добавляем эффект при наведении*/
+
+.page_comics_description_container{
+  display: inline-block;
+  padding: 0 25px 0 25px;
+  width: 100%;
 }
-li {
-  float:left; /*Размещаем список горизонтально для реализации меню*/
-  margin-right:5px; /*Добавляем отступ у пунктов меню*/
-  
+
+.page_comics_cover_container > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 0.2s;
 }
 
 .comics_preview_container {
@@ -117,7 +110,7 @@ li {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  background: var(--rusty_crimson);
+  background: var(--dull_lavender);
   border-radius: 4px;
   font-weight: 400;
   font-size: 16px;

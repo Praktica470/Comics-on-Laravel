@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomePageController;
+use App\Http\Controllers\ComicsPageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [WelcomePageController::class, 'index']);
+
+Route::get('/comics{id}', [ComicsPageController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
