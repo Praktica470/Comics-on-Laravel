@@ -27,6 +27,9 @@ Route::get('/comics{id}', [ComicsPageController::class, 'index']);
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/mastery', function () {
+        return view('master');
+    });
 });
 
 Route::middleware('auth')->group(function () {

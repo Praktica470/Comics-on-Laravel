@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         // ]);
 
             $this->call(UsersTableSeeder::class);
+            $this->call(ComicsTableSeeder::class);
+            $this->call(GenresTableSeeder::class);
             
     }
 }
