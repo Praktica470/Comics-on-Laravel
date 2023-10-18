@@ -78,6 +78,22 @@ li {
   position: relative;
 }
 
+.card__empty {
+  width: 225px;
+  min-height: 350px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Размещаем элементы в колонку */
+  border: 4px solid var(--bleak_olive);
+  border-radius: 6px;
+  transition: 0.2s;
+  position: relative;
+}
+
+.card__empty:hover {
+  box-shadow: 4px 8px 16px rgba(161, 133, 225, 0.2);
+}
+
 /* При наведении на карточку - меняем цвет тени */
 .card:hover {
   box-shadow: 4px 8px 16px rgba(161, 133, 225, 0.2);

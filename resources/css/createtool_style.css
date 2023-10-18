@@ -1,0 +1,101 @@
+:root{
+    --darkest_blue: #364151;
+    --highlight_blue: #798593;
+    --light_lavender: #ded2cf;
+    --dull_lavender: #aca1a1;
+    --highlight_dull_lavender: #afaca8;
+
+    --somber_green: #474f42;
+    --bleak_olive: #888880;
+    --rusty_crimson: #6f2809;
+    --highlight_rusty_crimson: #a35858;
+}
+
+
+h1 {
+    color: var(--light_lavender);
+    font-family: Arial, Verdana, sans-serif;
+    text-align: center;
+}
+body {
+    background: var(--highlight_blue);
+    color: var(--light_lavender);
+}
+
+input[type=text]{
+    width: 200px; 
+    height: 39px; 
+    font-size: 16px;
+    -webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
+    -moz-border-radius: 0px 4px 4px 0px/0px 0px 4px 4px; 
+    border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
+    background-color: var(--darkest_blue);
+    color: var(--light_lavender);
+    -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+    -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+    box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+    border: solid 1px var(--dull_lavender);
+    margin-left: -5px;
+    margin-top: 13px; 
+    padding-left: 10px;
+
+    
+  }
+
+
+.page_comics_container {
+  width: 100%;
+  display: flex;
+  border-radius: 4px;
+  padding: 50px 25px 20px 25px;
+  position: relative;
+  background: var(--darkest_blue);
+}
+
+.page_comics_cover_container{
+  display: inline-block;
+  min-width: 270px;
+  max-width: 300px;
+}
+
+.page_comics_description_container{
+  display: inline-block;
+  padding: 0 25px 0 15px;
+  width: 100%;
+}
+
+.page_comics_cover_container > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 0.2s;
+}
+
+.comics_preview_container {
+    width: 10px;
+    height: 15px;
+    background: var(--dull_lavender);
+}
+
+.card__add {
+    display: block;
+    align-self: center;
+    width: 70%;
+    font-weight: 400;
+    font-size: 17px;
+    color: var(--dull_lavender);
+    background-color: var(--darkest_blue);
+    padding: 10px;
+    text-align: center;
+    border: 1px solid var(--dull_lavender);
+    border-radius: 4px;
+    cursor: pointer; /* Меняем курсор при наведении */
+    transition: 0.2s;
+    margin-top: auto; /* Прижимаем кнопку к низу карточки */
+  }
+  
+  .card__add:hover {
+    border: 1px solid var(--highlight_blue);
+    background-color: var(--highlight_blue);
+    color: var(--highlight_dull_lavender);
+  }

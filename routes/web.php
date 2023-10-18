@@ -30,6 +30,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/mastery', function () {
         return view('master');
     });
+
+    Route::get('/new_project', function () {
+        return view('createtool');
+    });
 });
 
 Route::middleware('auth')->group(function () {

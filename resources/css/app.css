@@ -220,3 +220,7 @@ ul {
     text-decoration: underline; /* Добавляем подчеркивание при наведении курсора на ссылку */
     color: var(--highlight_blue);
    }
+
+   .tw_ring_light_lavender {
+    --tw-ring-color: var(--dull_lavender);
+   }
