@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomePageController;
 use App\Http\Controllers\ComicsPageController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CreatedComicsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,9 +32,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('master');
     });
 
-    Route::get('/new_project', function () {
-        return view('createtool');
-    });
+    Route::get('/new_project', [CreatedComicsController::class, 'index'])->name('new_project');
+    Route::post('/new_project', [CreatedComicsController::class, 'store'])->name('new_project.store');
 });
 
 Route::middleware('auth')->group(function () {
