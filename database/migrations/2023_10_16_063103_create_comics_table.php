@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('comics_title');
             $table->text('comics_description');
             $table->string('comics_cover_image_path');
-            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(User::class)->constrained();
             $table->timestamps();
             $table->timestamp('published_at');
         });

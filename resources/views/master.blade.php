@@ -9,55 +9,48 @@
         </head>
 
         <body>
+            @include('comics.head_menu')
 
-        <ul class="menu">
-                <li><a href="/dashboard" class="nav_a">Профиль</a></li>
-                <li><a href="/" class="nav_a">Главное</a></li>
-                <li><a href="/mastery" class="nav_a">Мастерская</a></li>
+            <div>
+            <h1>Мастерская</h1>
+            </div>
 
-
-        </ul>
-
-        <div>
-        <h1>Мастерская</h1>
-        </div>
-
-        <div class="cards">
-                        <!-- Карточка комикса -->
-                        <div class="card">
-                            <!-- Верхняя часть -->
-                            <div class="card__top">
-                                <!-- Изображение-ссылка комикса -->
-                                <a href=/new_project class="card__image">
-                                <img 
-                                    src="./image/cover_image_sample2.jpg"
-                                    alt="Создание комикса"
-                                />
+            <div class="cards">
+                <!-- Карточка комикса -->
+                <div class="card">
+                    <!-- Верхняя часть -->
+                    <div class="card__top">
+                        <!-- Изображение-ссылка комикса -->
+                        <a href=/new_project class="card__image">
+                        <img 
+                            src="./image/cover_image_sample2.jpg"
+                            alt="Создание комикса"
+                        />
+                        </a>
+                        <!-- Жанр, тэг -->
+                        <div class="card__label">
+                            +
+                        </div>
+                    </div>
+                    <!-- Нижняя часть -->
+                    <div class="card__bottom">
+                        <!-- Название комикса-->
+                        <div class="card__elements">
+                            <div class="card__title">
+                                <a href=/new_project class="text_link">
+                                    Создать новый комикс
                                 </a>
-                                <!-- Жанр, тэг -->
-                                <div class="card__label">
-                                    +
-                                </div>
-                            </div>
-                            <!-- Нижняя часть -->
-                            <div class="card__bottom">
-                                <!-- Название комикса-->
-                                <div class="card__elements">
-                                    <div class="card__title">
-                                        <a href=/new_project class="text_link">
-                                            Создать новый комикс
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- Автор комикса -->
-                                <div class="card__author"></div>
-                                <!-- Описание комикса -->
-                                <a class="card__description">
-                                </a>
-                                <!-- Кнопка "Подробнее", ссылается полную страницу с комиксом -->
-                                <!-- <button class="card__add">Подробнее</button> -->
                             </div>
                         </div>
+                        <!-- Автор комикса -->
+                        <div class="card__author"></div>
+                        <!-- Описание комикса -->
+                        <a class="card__description">
+                        </a>
+                        <!-- Кнопка "Подробнее", ссылается полную страницу с комиксом -->
+                        <!-- <button class="card__add">Подробнее</button> -->
+                    </div>
                 </div>
-    </body>
+            </div>
+        </body>
 </html>

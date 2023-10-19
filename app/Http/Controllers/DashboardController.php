@@ -10,7 +10,7 @@ class DashboardController extends Controller
 {
     public function index(){
         
-        $comics = Comics::where('user_id', Auth::user()->id)->get();
+        $comics = Auth::user()->comics;
 
         return view('dashboard')->with('comics', $comics);
     }

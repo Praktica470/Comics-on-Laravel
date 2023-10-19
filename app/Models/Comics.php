@@ -16,4 +16,8 @@ class Comics extends Model
         'user_id',
         'published_at'
     ];
+
+    public function user() {
+        return $this->belongsTo('App\Models\User');
+    }
 }

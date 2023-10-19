@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('genres_to_comics', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Comics::class);
-            $table->foreignIdFor(Genre::class);
+            $table->foreignIdFor(Comics::class)->constrained();
+            $table->foreignIdFor(Genre::class)->constrained();
             $table->timestamps();
         });
     }
