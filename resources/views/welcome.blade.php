@@ -12,10 +12,13 @@
             @include('comics.head_menu')
 
             <div>
-            <h1>Новые комиксы</h1>
+                <h1>Новые комиксы</h1>
             </div>
-
-                @include('comics.comics_card_component')
+                <div class="cards">
+                    @foreach ($comics as $single_comics)
+                        @include('comics.comics_card_component')
+                    @endforeach
+                </div>
             </div>
         </body>
     </html>

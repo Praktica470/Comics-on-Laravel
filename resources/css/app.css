@@ -163,13 +163,24 @@ ul {
       color: var(--light_lavender)
   }
   
+  .description_container {
+    max-height: 140px;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 10px;
+    text-overflow: ellipsis;
+  }
+
   .card__description {
     display: block;
     margin-bottom: 10px;
     font-weight: 400;
     font-size: 17px;
-    line-height: 150%;
+    line-height: 120%;
     color: var(--dull_lavender);
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .card__description:hover {

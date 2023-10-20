@@ -1,5 +1,4 @@
-<div class="cards">
-    @foreach ($comics as $single_comics)
+
         <!-- Карточка комикса -->
         <div class="card">
             <!-- Верхняя часть -->
@@ -30,12 +29,11 @@
                 <!-- Автор комикса -->
                 <div class="card__author">{{ $single_comics->user->name }}</div>
                 <!-- Описание комикса -->
-                <a class="card__description">
-                {{ $single_comics->comics_description }}
-                </a>
+                <div class="description_container">
+                    <p class="card__description">
+                    {{ $single_comics->comics_description }}</p>
+                </div>
                 <!-- Кнопка "Подробнее", ссылается полную страницу с комиксом -->
                 <button class="card__add">Подробнее</button>
             </div>
         </div>
-    @endforeach
-</div>

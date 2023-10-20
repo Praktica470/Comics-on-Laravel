@@ -7,13 +7,16 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use App\Models\Genre;
+use App\Models\GenresToComics;
 
 
 class CreatedComicsController extends Controller
 {
     public function index() {
 
-        return view('createtool');
+        $genres = Genre::all();
+        return view('createtool')->with('genres', $genres);
 
     }
 
@@ -21,13 +24,14 @@ class CreatedComicsController extends Controller
     {
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
-            'description' => ['required', 'string']
+            'description' => ['required', 'string'],
+            'genre' => ['required', 'min:1']
         ]);
 
         // $cover = $request->cover;
         $cover = $request->file('file');
 
-        if($cover->isValid()){
+        if($request->hasFile('file')){
             $path = $request->file->store();
             Comics::create([
             'comics_title' => $request->title,
@@ -44,6 +48,15 @@ class CreatedComicsController extends Controller
             'comics_cover_image_path' => "./image/cover_image_sample2.jpg",
             'user_id' => Auth::user()->id,
             'published_at' => Carbon::now()
+            ]);
+        }
+
+        $comics_id = Auth::user()->comics->first()->id;
+        $genres = $request->genre;
+        for($i = 0; $i < strlen($genres); $i++){
+            GenresToComics::create([
+                'comics_id' => $comics_id,
+                'genre_id' => $genres[$i]
             ]);
         }
             // if($request->file('file')->isValid()){

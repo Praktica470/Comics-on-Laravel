@@ -44,6 +44,7 @@ class User extends Authenticatable
     ];
 
     public function comics() {
-        return $this->hasMany('App\Models\Comics');
+        return $this->hasMany('App\Models\Comics')
+        ->latest();
     }
 }

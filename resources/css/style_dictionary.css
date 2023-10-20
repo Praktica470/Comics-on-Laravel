@@ -44,9 +44,7 @@ ul {
   padding:10px; /*добавляем отступ*/
   font-family: arial; /*меняем шрифт*/
   border-radius:4px; /*добавляем скругление*/
-  -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
-  -o-transition: all 0.3s 0.01s ease;
-  -webkit-transition: all 0.3s 0.01s ease;
+  transition: all 0.3s 0.01s ease;
 }
 .nav_a:hover {
   background: var(--highlight_rusty_crimson);/*добавляем эффект при наведении*/
@@ -167,17 +165,51 @@ li {
     color: var(--light_lavender)
 }
 
-.card__description {
+.description_container {
+  max-height: 140px;
   display: block;
+  overflow: hidden;
+  margin-bottom: 10px;
+  text-overflow: ellipsis;
+}
+
+.card__description {
   margin-bottom: 10px;
   font-weight: 400;
   font-size: 17px;
-  line-height: 150%;
+  line-height: 120%;
+  max-height: 250px;
   color: var(--dull_lavender);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card__description:hover {
   color: var(--highlight_dull_lavender);
+}
+
+.genres_container {
+  display: flex;
+}
+
+.genre_label{
+  padding: 4px 8px;
+  margin: 10px 5px;
+  bottom: 10px;
+  left: 10px;
+  background: var(--darkest_blue);
+  border: 1px solid var(--rusty_crimson);
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--light_lavender);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.genre_label:hover {
+  background: var(--rusty_crimson)
 }
 
 .card__add {

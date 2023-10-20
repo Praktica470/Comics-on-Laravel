@@ -5,10 +5,11 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
             <title>{{ $single_comics->comics_title }}</title>
-            <link rel="stylesheet" href="css/comics_page_style.css"/>
+            <link rel="stylesheet" href="../css/comics_page_style.css"/>
         </head>
 
         <body>
+        @include('comics.head_menu')
             <div class = "page_comics_container">
                 <div class = "page_comics_cover_container">
                     <img src = {{ $single_comics->comics_cover_image_path }}
@@ -16,6 +17,7 @@
                 </div>
                 <div class= "page_comics_description_container">
                     <h1>{{ $single_comics->comics_title }}</h1>
+                    @include('comics.comics_genres_component')
                 </div>
             </div>
         </body>

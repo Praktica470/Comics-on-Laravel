@@ -21,7 +21,7 @@
                     <!-- Верхняя часть -->
                     <div class="card__top">
                         <!-- Изображение-ссылка комикса -->
-                        <a href=/new_project class="card__image">
+                        <a href={{ route('new_project') }} class="card__image">
                         <img 
                             src="./image/cover_image_sample2.jpg"
                             alt="Создание комикса"
@@ -37,7 +37,7 @@
                         <!-- Название комикса-->
                         <div class="card__elements">
                             <div class="card__title">
-                                <a href=/new_project class="text_link">
+                                <a href={{ route('new_project') }} class="text_link">
                                     Создать новый комикс
                                 </a>
                             </div>

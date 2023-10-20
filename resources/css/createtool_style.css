@@ -11,6 +11,31 @@
     --highlight_rusty_crimson: #a35858;
 }
 
+ul {
+  list-style: none; /*убираем маркеры списка*/
+  margin: 0; /*убираем отступы*/
+  padding-left: 0; /*убираем отступы*/
+  margin-top:25px; /*делаем отступ сверху*/
+  padding-bottom: 26px;
+}
+.nav_a {
+  text-decoration: none; /*убираем подчеркивание текста ссылок*/
+  background: var(--rusty_crimson); /*добавляем фон к пункту меню*/
+  color: var(--light_lavender); /*меняем цвет ссылок*/
+  padding:10px; /*добавляем отступ*/
+  font-family: arial; /*меняем шрифт*/
+  border-radius:4px; /*добавляем скругление*/
+  transition: all 0.3s 0.01s ease;
+}
+.nav_a:hover {
+  background: var(--highlight_rusty_crimson);/*добавляем эффект при наведении*/
+}
+li {
+  float:left; /*Размещаем список горизонтально для реализации меню*/
+  margin-right:5px; /*Добавляем отступ у пунктов меню*/
+  
+}
+
 
 h1 {
     color: var(--light_lavender);
@@ -22,7 +47,7 @@ body {
     color: var(--light_lavender);
 }
 
-input[type=text], input[type=file], textarea{
+input[type=text], textarea{
   font-size: 18px;
   border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
   background-color: var(--darkest_blue);
@@ -39,6 +64,20 @@ input[type=text]{
     padding-left: 10px;
 }
 
+input::-webkit-file-upload-button {
+  background-color: var(--somber_green);
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px 1px #454545;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+input::-webkit-file-upload-button:hover {
+  background-color: var(--bleak_olive);
+}
+
 textarea {
   resize: none;
   margin-left: -5px;
@@ -46,12 +85,6 @@ textarea {
   width: 100%;
   max-width: 700px;
 }
-
-.my {
-  /* opacity: 0;
-  visibility: hidden; */
-}
-
 
 .page_comics_container {
   width: 100%;
@@ -89,6 +122,29 @@ textarea {
     width: 10px;
     height: 15px;
     background: var(--dull_lavender);
+}
+
+.genres_container {
+  display: flex;
+}
+
+.genre_label{
+  padding: 4px 8px;
+  margin: 10px 5px;
+  bottom: 10px;
+  left: 10px;
+  background: var(--darkest_blue);
+  border: 1px solid var(--rusty_crimson);
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--light_lavender);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.genre_label:hover {
+  background: var(--rusty_crimson)
 }
 
 .submit_container {

@@ -16,4 +16,8 @@ class GenresToComics extends Model
         'comics_id',
         'genre_id'
     ];
+
+    public function genre() {
+        return $this->belongsTo('App\Models\Genre');
+    }
 }

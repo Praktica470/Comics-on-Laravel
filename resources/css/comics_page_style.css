@@ -12,6 +12,31 @@
 }
 
 
+ul {
+  list-style: none; /*убираем маркеры списка*/
+  margin: 0; /*убираем отступы*/
+  padding-left: 0; /*убираем отступы*/
+  margin-top:25px; /*делаем отступ сверху*/
+  padding-bottom: 26px;
+}
+.nav_a {
+  text-decoration: none; /*убираем подчеркивание текста ссылок*/
+  background: var(--rusty_crimson); /*добавляем фон к пункту меню*/
+  color: var(--light_lavender); /*меняем цвет ссылок*/
+  padding:10px; /*добавляем отступ*/
+  font-family: arial; /*меняем шрифт*/
+  border-radius:4px; /*добавляем скругление*/
+  transition: all 0.3s 0.01s ease;
+}
+.nav_a:hover {
+  background: var(--highlight_rusty_crimson);/*добавляем эффект при наведении*/
+}
+li {
+  float:left; /*Размещаем список горизонтально для реализации меню*/
+  margin-right:5px; /*Добавляем отступ у пунктов меню*/
+  
+}
+
 h1 {
     color: var(--light_lavender);
     font-family: Arial, Verdana, sans-serif;
@@ -20,6 +45,29 @@ h1 {
 body {
     background: var(--highlight_blue);
     color: var(--light_lavender);
+}
+
+.genres_container {
+  display: flex;
+}
+
+.genre_label{
+  padding: 4px 8px;
+  margin: 10px 5px;
+  bottom: 10px;
+  left: 10px;
+  background: var(--darkest_blue);
+  border: 1px solid var(--rusty_crimson);
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--light_lavender);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.genre_label:hover {
+  background: var(--rusty_crimson)
 }
 
 .page_comics_container {
