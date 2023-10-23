@@ -20,7 +20,7 @@ class CreatedComicsController extends Controller
 
     }
 
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
@@ -59,6 +59,8 @@ class CreatedComicsController extends Controller
                 'genre_id' => $genres[$i]
             ]);
         }
+
+        return response('testlaravel/project/{$id}');
             // if($request->file('file')->isValid()){
             //     return "OK";
             // }

@@ -18,6 +18,7 @@
                 <div class= "page_comics_description_container">
                     <h1>{{ $single_comics->comics_title }}</h1>
                     @include('comics.comics_genres_component')
+                    <p>{{$single_comics->comics_description}}</p>
                 </div>
             </div>
         </body>

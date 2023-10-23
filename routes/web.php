@@ -5,8 +5,12 @@ use App\Http\Controllers\WelcomePageController;
 use App\Http\Controllers\ComicsPageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CreatedComicsController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\MasterController;
+
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Middleware\EnsureUserIsAuthor;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,13 +32,13 @@ Route::get('/comics{id}', [ComicsPageController::class, 'index']);
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/mastery', function () {
-        return view('master');
-    });
+    Route::get('/mastery', [MasterController::class, 'index']);
 
     Route::get('/new_project', [CreatedComicsController::class, 'index'])->name('new_project');
     Route::post('/new_project', [CreatedComicsController::class, 'store'])->name('new_project.store');
 });
+
+Route::get('/project/{id}', [ProjectController::class, 'index'])->middleware(EnsureUserIsAuthor::class);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
