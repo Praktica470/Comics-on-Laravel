@@ -38,7 +38,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/new_project', [CreatedComicsController::class, 'store'])->name('new_project.store');
 });
 
-Route::get('/project/{id}', [ProjectController::class, 'index'])->middleware(EnsureUserIsAuthor::class);
+Route::middleware([EnsureUserIsAuthor::class])->group(function () {
+    Route::get('/project/{id}', [ProjectController::class, 'index'])->name('project');
+    Route::post('/project/{id}', [ProjectController::class, 'storeChapter'])->name('project.chapter');
+    Route::get('/project/{id}/page/{ch}', [ProjectController::class, 'toPage'])->name('project.topage');
+    Route::post('/project/{id}/page/{ch}', [ProjectController::class, 'storePage'])->name('project.page');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

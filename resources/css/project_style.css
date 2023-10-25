@@ -1,0 +1,340 @@
+:root{
+
+    --darkest_blue: #364151;
+    --highlight_blue: #798593;
+    --muted_highlight_blue: #5e7186;
+    --light_lavender: #ded2cf;
+    --dull_lavender: #aca1a1;
+    --highlight_dull_lavender: #afaca8;
+
+    --somber_green: #474f42;
+    --bleak_olive: #888880;
+    --rusty_crimson: #6f2809;
+    --muted_rusty_crimson: #5f1a05;
+    --highlight_rusty_crimson: #a35858;
+
+
+    /* --darkest_blue: #050F40;
+    --highlight_blue: #3A3BC5;
+    --light_lavender: #EAD8FF;
+    --dull_lavender: #786A9A;
+    --highlight_dull_lavender: #A185E1; */
+}
+
+
+h1 {
+    color: var(--light_lavender);
+    background: var(--bleak_olive);
+    font-family: Arial, Verdana, sans-serif;
+    text-align: center;
+}
+body {
+    background: var(--darkest_blue);
+    color: var(--light_lavender);
+}
+
+ul {
+  list-style: none; /*убираем маркеры списка*/
+  margin: 0; /*убираем отступы*/
+  padding-left: 0; /*убираем отступы*/
+  margin-top:25px; /*делаем отступ сверху*/
+}
+.nav_a {
+  text-decoration: none; /*убираем подчеркивание текста ссылок*/
+  background: var(--rusty_crimson); /*добавляем фон к пункту меню*/
+  color: var(--light_lavender); /*меняем цвет ссылок*/
+  padding:10px; /*добавляем отступ*/
+  font-family: arial; /*меняем шрифт*/
+  border-radius:4px; /*добавляем скругление*/
+  transition: all 0.3s 0.01s ease;
+}
+.nav_a:hover {
+  background: var(--highlight_rusty_crimson);/*добавляем эффект при наведении*/
+}
+li {
+  float:left; /*Размещаем список горизонтально для реализации меню*/
+  margin-right:5px; /*Добавляем отступ у пунктов меню*/
+  
+}
+
+a {
+  text-decoration: none; /* Убирает подчеркивание для ссылок */
+  color: var(--light_lavender);
+ } 
+a:hover { 
+  text-decoration: underline; /* Добавляем подчеркивание при наведении курсора на ссылку */
+  color: var(--highlight_blue);
+ }
+
+input[type=text], textarea{
+  font-size: 18px;
+  width: 407px;
+  height: 100px;
+  margin: 5px;
+  border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
+  background-color: var(--darkest_blue);
+  color: var(--light_lavender);
+  box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  border: solid 1px var(--dull_lavender);
+}
+
+input[type=text]{
+    width: 267px; 
+    height: 30px; 
+    margin-top: 13px;
+    padding-left: 10px;
+}
+
+input::-webkit-file-upload-button {
+  background-color: var(--somber_green);
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px 1px #454545;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+input::-webkit-file-upload-button:hover {
+  background-color: var(--bleak_olive);
+}
+
+
+.container {
+    width: 100%;
+}
+
+details {
+    background-color: var(--muted_rusty_crimson);
+}
+
+summary {
+    background-color: var(--rusty_crimson);
+    padding: 10px 15px;
+    font-size: 1em;
+    border-bottom: var(--highlight_blue);
+}
+
+.description {
+  background-color: var(--highlight_rusty_crimson);
+}
+
+.card {
+    position: relative;
+    flex: 0 0 240px;
+    width: 180px;
+    height: 260px;
+    margin: 10px;
+    background-color: var(--highlight_blue);
+    overflow: hidden;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+    border: 4px solid var(--highlight_blue);
+    border-radius: 4px;
+    transition: 0.1s;
+   }
+
+.card:hover {
+    box-shadow: 4px 8px 16px rgba(161, 133, 225, 0.2);
+  }
+
+  .card__top {
+    flex: 0 0 340px; /* Задаем высоту 220px, запрещаем расширение и сужение по высоте */
+    position: relative;
+    overflow: hidden; /* Скрываем, что выходит за пределы */
+  }
+
+  .card__image {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .card__image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .card__bottom {
+    position: absolute;
+    top: 200px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto; /* Занимаем всю оставшуюся высоту карточки */
+    padding: 10px;
+  }
+
+  .number{
+    background: var(--darkest_blue);
+    text-align: center;
+    border-radius: 4px;
+  }
+  
+  .new{
+    background-color: var(--muted_highlight_blue);
+  }
+
+  .new_summary{
+    background-color: var(--highlight_blue);
+  }
+
+  .form_label{
+    margin: 5px;
+    font-weight: 600;
+  }
+
+  .btn__add {
+    display: block;
+    width: 70%;
+    max-width: 150px;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--dull_lavender);
+    background-color: var(--darkest_blue);
+    text-align: center;
+    border: 1px solid var(--dull_lavender);
+    border-radius: 4px;
+    cursor: pointer; /* Меняем курсор при наведении */
+    transition: 0.2s;
+    margin: 5px;
+  }
+
+  .btn__add:hover {
+    background-color: var(--dull_lavender);
+    color: var(--light_lavender);
+  }
+
+  .cards {
+    display: grid;
+    /* Автоматически заполняем на всю ширину grid-контейнера */
+    grid-template-columns: repeat(auto-fill, 225px);
+    width: 100%;
+    max-width: 1000px; /* Ширина grid-контейнера */
+    justify-content: center;
+    justify-items: center; /* Размещаем карточку по центру */
+    column-gap: 30px; /* Отступ между колонками */
+    row-gap: 40px; /* Отступ между рядами */
+    margin: 0 auto;
+  }
+
+  .empty{
+    opacity: .6;
+  }
+
+
+  /* свойства модального окна по умолчанию */
+.modal {
+  position: fixed; /* фиксированное положение */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5); /* цвет фона */
+  z-index: 1050;
+  opacity: 0; /* по умолчанию модальное окно прозрачно */
+  -webkit-transition: opacity 200ms ease-in; 
+  -moz-transition: opacity 200ms ease-in;
+  transition: opacity 200ms ease-in; /* анимация перехода */
+  pointer-events: none; /* элемент невидим для событий мыши */
+  margin: 0;
+  padding: 0;
+}
+/* при отображении модального окно */
+.modal:target {
+  opacity: 1; /* делаем окно видимым */
+  pointer-events: auto; /* элемент видим для событий мыши */
+  overflow-y: auto; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+}
+/* ширина модального окна и его отступы от экрана */
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+@media (min-width: 576px) {
+.modal-dialog {
+    max-width: 500px;
+    margin: 30px auto; /* для отображения модального окна по центру */
+}
+}
+/* свойства для блока, содержащего контент модального окна */ 
+.modal-content {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: var(--highlight_blue);
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: .3rem;
+  outline: 0;
+}
+@media (min-width: 768px) {
+.modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
+}
+/* свойства для заголовка модального окна */
+.modal-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: var(--muted_highlight_blue);
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid #032a3d;
+}
+.modal-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+/* свойства для кнопки "Закрыть" */
+.close {
+  float: right;
+  font-family: sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .5;
+  text-decoration: none;
+}
+/* свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении */
+.close:focus, .close:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: .75;
+}
+/* свойства для блока, содержащего основное содержимое окна */
+.modal-body {
+position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 15px;
+  overflow: auto;
+  background: var(--highlight_blue);
+}

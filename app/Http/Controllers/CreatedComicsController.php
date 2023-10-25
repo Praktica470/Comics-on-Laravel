@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Models\Genre;
 use App\Models\GenresToComics;
+use App\Models\Chapter;
+use App\Models\Page;
 
 
 class CreatedComicsController extends Controller
@@ -31,7 +33,9 @@ class CreatedComicsController extends Controller
         // $cover = $request->cover;
         $cover = $request->file('file');
 
-        if($request->hasFile('file')){
+        $hasCover = $request->hasFile('file');
+
+        if($hasCover){
             $path = $request->file->store();
             Comics::create([
             'comics_title' => $request->title,
@@ -50,8 +54,8 @@ class CreatedComicsController extends Controller
             'published_at' => Carbon::now()
             ]);
         }
-
-        $comics_id = Auth::user()->comics->first()->id;
+        $last_comics = Auth::user()->comics->first();
+        $comics_id = $last_comics->id;
         $genres = $request->genre;
         for($i = 0; $i < strlen($genres); $i++){
             GenresToComics::create([
@@ -60,7 +64,20 @@ class CreatedComicsController extends Controller
             ]);
         }
 
-        return response('testlaravel/project/{$id}');
+        if($hasCover){
+            Chapter::create(['title' => '0', 'description' => 'zero chapter', 'comics_id' => $comics_id]);
+            Page::create(['description' => 'Cover of '.$last_comics->name, 
+            'image_path' => $last_comics->comics_cover_image_path,
+            'chapter_id' => $last_comics->chapters->first()->id]);
+        }
+        else{
+            Chapter::create(['title' => '0', 'description' => 'zero chapter', 'comics_id' => $comics_id]);
+            Page::create(['description' => 'Cover of '.$last_comics->name, 
+            'image_path' => "./image/cover_image_sample2.jpg",
+            'chapter_id' => $last_comics->chapters->first()->id]);
+        }
+
+        return redirect('mastery');
             // if($request->file('file')->isValid()){
             //     return "OK";
             // }

@@ -20,4 +20,8 @@ class Comics extends Model
     public function user() {
         return $this->belongsTo('App\Models\User');
     }
+
+    public function chapters() {
+        return $this->hasMany('App\Models\Chapter');
+    }
 }
