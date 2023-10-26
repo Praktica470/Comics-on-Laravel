@@ -1,6 +1,7 @@
 :root{
     --darkest_blue: #364151;
     --highlight_blue: #798593;
+    --muted_highlight_blue: #5e7186;
     --light_lavender: #ded2cf;
     --dull_lavender: #aca1a1;
     --highlight_dull_lavender: #afaca8;
@@ -8,6 +9,7 @@
     --somber_green: #474f42;
     --bleak_olive: #888880;
     --rusty_crimson: #6f2809;
+    --muted_rusty_crimson: #5f1a05;
     --highlight_rusty_crimson: #a35858;
 }
 
@@ -47,6 +49,37 @@ body {
     color: var(--light_lavender);
 }
 
+a{
+  text-decoration: none;
+  color: var(--light_lavender);
+}
+
+a:hover{
+  color: var(--highlight_dull_lavender);
+}
+
+.detail_ch{
+  width: 100%;
+  background: var(--muted_highlight_blue);
+}
+
+.chapters {
+  background: var(--darkest_blue);
+  cursor: pointer;
+  transition: .2s;
+}
+
+.chapters:hover{
+  background: var(--muted_highlight_blue);
+}
+
+.contents_list{
+  display: inline-block;
+  width: 30%;
+  border: 4px solid var(--highlight_blue);
+  border-radius: 4px;
+}
+
 .genres_container {
   display: flex;
 }
@@ -77,6 +110,7 @@ body {
   padding: 50px 25px 20px 25px;
   position: relative;
   background: var(--darkest_blue);
+  margin-bottom: 8px;
 }
 
 .page_comics_cover_container{

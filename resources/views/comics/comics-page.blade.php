@@ -9,7 +9,7 @@
         </head>
 
         <body>
-        @include('comics.head_menu')
+            @include('comics.head_menu')
             <div class = "page_comics_container">
                 <div class = "page_comics_cover_container">
                     <img src = {{ $single_comics->comics_cover_image_path }}
@@ -19,6 +19,9 @@
                     <h1>{{ $single_comics->comics_title }}</h1>
                     @include('comics.comics_genres_component')
                     <p>{{$single_comics->comics_description}}</p>
+                </div>
+                <div class="contents_list">
+                    @include('comics.comics_contents_list')
                 </div>
             </div>
         </body>

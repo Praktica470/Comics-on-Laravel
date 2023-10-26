@@ -60,9 +60,6 @@
                                 <div id="make_page" class="card empty">
                                         <div class="card__top">
                                             <div class="card__image">
-                                                <img 
-                                                    src=
-                                                    alt="Создание комикса"/>
                                             </div>
                                         </div>
                                         <div class="card__bottom">

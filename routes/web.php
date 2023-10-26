@@ -26,6 +26,10 @@ Route::get('/', [WelcomePageController::class, 'index']);
 
 Route::get('/comics{id}', [ComicsPageController::class, 'index']);
 
+Route::get('/comics{id}/chapter{ch}/page{pg}', function($id, $ch, $pg) {
+    $page = App\Models\Comics::find($id)->chapters->find($ch)->pages->find($pg);
+    return view('page')->with('page', $page);
+});
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
